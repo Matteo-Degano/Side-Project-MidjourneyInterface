@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 349 89% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --error: 0 100% 50%;
+    --error-foreground: 0 0% 100%;
+
+    --highlight: 219.2 100% 58.6%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 349 89% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --error: 0 100% 50%;
+    --error-foreground: 0 0% 100%;
+
+    --highlight: 219.2 100% 58.6%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+
+    --start-color: rgb(3, 7, 17);
+    --end-color: rgba(3, 7, 17, 0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+[data-rmiz-modal-overlay="visible"] {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(5px);
+}
+
+.HeroAnimateIconsWrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    270deg,
+    var(--start-color) 0%,
+    var(--end-color) 100%
+  );
+  transform: rotate(-180deg);
+  will-change: transform;
+  width: 165px;
+  height: 100%;
+  z-index: 1;
+}
+
+.HeroAnimateIconsWrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(
+    270deg,
+    var(--start-color) 0%,
+    var(--end-color) 100%
+  );
+  width: 165px;
+  height: 100%;
+  z-index: 1;
+}
+
+.HeroAnimateIcons--blur-left {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background: linear-gradient(
+      -90deg,
+      var(--start-color) 0%,
+      var(--end-color) 100%
+    ),
+    linear-gradient(-90deg, var(--start-color) 0%, var(--end-color) 100%);
+  transform: rotate(150deg);
+  will-change: transform;
+  width: 200px;
+  height: 150%;
+  z-index: 1;
+}
+
+.HeroAnimateIcons--blur-right {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: linear-gradient(
+      90deg,
+      var(--start-color) 0%,
+      var(--end-color) 100%
+    ),
+    linear-gradient(90deg, var(--start-color) 0%, var(--end-color) 100%);
+  transform: rotate(-150deg);
+  will-change: transform;
+  width: 200px;
+  height: 150%;
+  z-index: 1;
+}
+
+.HeroAnimateIcons--blur-bottom {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    var(--start-color) 0%,
+    var(--end-color) 100%
+  );
+  transform: rotate(0deg);
+  will-change: transform;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+}
+
+.HeroAnimateIcons--bg {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding-top: 72px;
+  padding-bottom: 200px;
+  margin-bottom: -200px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: clamp(696px, 100%, 1536px);
+  overflow-x: hidden;
+  pointer-events: none;
+}
+
+.parent:hover + .child {
+  visibility: visible;
+}
